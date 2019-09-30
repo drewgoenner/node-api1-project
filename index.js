@@ -79,7 +79,7 @@ server.put('/api/users/:id', (req, res) => {
             if(user) {
                 userDb.findById(id)
                     .then(upUser => {
-                        res.json(upUser)
+                        res.status(200).json(upUser)
                     })
             } else {
                 res.status(404).json({ message: "The user with the specified ID does not exist"})
