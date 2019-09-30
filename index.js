@@ -85,7 +85,7 @@ server.put('/api/users/:id', (req, res) => {
                 res.status(404).json({ message: "The user with the specified ID does not exist"})
             }
         })
-        .then(err => {
+        .catch(err => {
             res.status(500).json({ error: "The user information could not be modified"})
         })
     }
